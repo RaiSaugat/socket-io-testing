@@ -1,0 +1,35 @@
+.connection {
+  position: absolute;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 24px;
+  font-weight: bold;
+
+  &.connected {
+    border: 1px solid #d0e9d9;
+    background-color: #f5faf4;
+
+    span {
+      background-color: #389f56;
+    }
+  }
+
+  &.disconnected {
+    border: 1px solid #fbdce1;
+    background-color: #fffafb;
+
+    span {
+      background-color: #f25363;
+    }
+  }
+}
+
+span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
