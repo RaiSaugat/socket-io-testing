@@ -7,6 +7,20 @@
   border-radius: 24px;
   font-weight: bold;
 
+  @media (max-width: 600px) {
+    right: 20px;
+    padding: 8px;
+
+    p {
+      font-size: 12px;
+    }
+
+    span {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
   &.connected {
     border: 1px solid #d0e9d9;
     background-color: #f5faf4;

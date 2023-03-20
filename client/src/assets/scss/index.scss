@@ -17,12 +17,22 @@ textarea {
   padding: 10px;
   font-size: 16px;
   margin: auto auto 0;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .heading {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+
+  h1 {
+    @media (max-width: 600px) {
+      margin-top: 50px;
+    }
+  }
 }
 
 .button {

@@ -3,7 +3,9 @@ import { io } from 'socket.io-client';
 import useLocalStorage from './hooks/useLocalStorage';
 import { exportText } from './utils/helper';
 
-const socket = io('http://localhost:3001');
+const url = 'https://socket-io-pi5g.onrender.com/';
+
+const socket = io(url);
 
 function App() {
   const [message, setMessage] = useLocalStorage('message', '');
@@ -23,14 +25,14 @@ function App() {
 
   return (
     <div className='wrapper'>
+      <div
+        className={`connection ${connection ? 'connected' : 'disconnected'}`}
+      >
+        <span></span>
+        <p>{connection ? 'Connected' : 'Disconnected'}</p>
+      </div>
       <div className='heading'>
         <h1>Live Translation</h1>
-        <div
-          className={`connection ${connection ? 'connected' : 'disconnected'}`}
-        >
-          <span></span>
-          <p>{connection ? 'Connected' : 'Disconnected'}</p>
-        </div>
       </div>
       <textarea
         placeholder='Message'

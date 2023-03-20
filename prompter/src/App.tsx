@@ -6,8 +6,10 @@ import FontPicker from 'font-picker-react';
 import useLocalStorage from './hooks/useLocalStorage';
 import { exportText } from './utils/helper';
 
+const url = 'https://socket-io-pi5g.onrender.com/';
+
 const connectSocket = () => {
-  const socket = io('http://localhost:3001');
+  const socket = io(url);
 
   return socket;
 };
@@ -102,6 +104,13 @@ function App() {
       document.documentElement.style.setProperty('--height', size);
     }
   }, [height]);
+
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setWidth('350');
+      setFontSize('14');
+    }
+  }, []);
 
   const handleExport = () => {
     exportText(message);
