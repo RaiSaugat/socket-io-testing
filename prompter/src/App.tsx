@@ -9,7 +9,7 @@ import { exportText } from './utils/helper';
 const url = 'https://socket-io-pi5g.onrender.com/';
 
 const connectSocket = () => {
-  const socket = io(url);
+  const socket = io('localhost:3001');
 
   return socket;
 };
@@ -130,6 +130,7 @@ function App() {
 
       <div className='buttons__wrapper'>
         <h3>Customize</h3>
+
         <div className='configures'>
           <div className='configure__button'>
             <p>Width</p>

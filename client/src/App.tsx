@@ -5,7 +5,7 @@ import { exportText } from './utils/helper';
 
 const url = 'https://socket-io-pi5g.onrender.com/';
 
-const socket = io(url);
+const socket = io('localhost:3001');
 
 function App() {
   const [message, setMessage] = useLocalStorage('message', '');
@@ -34,20 +34,23 @@ function App() {
       <div className='heading'>
         <h1>Live Translation</h1>
       </div>
-      <textarea
-        placeholder='Message'
-        onChange={(e) => {
-          setMessage(e.target.value);
-          socket.emit('live-translate', e.target.value);
-        }}
-        value={message}
-      >
-        {message}
-      </textarea>
 
-      <button className='button' onClick={handleExport}>
-        Export Speech
-      </button>
+      <div className='container'>
+        <textarea
+          placeholder='Message'
+          onChange={(e) => {
+            setMessage(e.target.value);
+            socket.emit('live-translate', e.target.value);
+          }}
+          value={message}
+        >
+          {message}
+        </textarea>
+
+        <button className='button' onClick={handleExport}>
+          Export Speech
+        </button>
+      </div>
     </div>
   );
 }

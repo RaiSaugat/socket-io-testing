@@ -11,16 +11,20 @@
   padding: 20px;
 }
 
-textarea {
+.container {
   width: 80%;
-  height: 300px;
-  padding: 10px;
-  font-size: 16px;
-  margin: auto auto 0;
 
   @media (max-width: 600px) {
     width: 100%;
   }
+}
+
+textarea {
+  width: 100%;
+  height: 300px;
+  padding: 10px;
+  font-size: 16px;
+  margin: auto auto 0;
 }
 
 .heading {
@@ -36,7 +40,7 @@ textarea {
 }
 
 .button {
-  width: 80%;
+  width: 100%;
   height: 50px;
   margin: 10px auto 0;
   font-size: 16px;
