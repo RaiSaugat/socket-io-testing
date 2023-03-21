@@ -9,7 +9,7 @@ import { exportText } from './utils/helper';
 const url = 'https://socket-io-pi5g.onrender.com/';
 
 const connectSocket = () => {
-  const socket = io('localhost:3001');
+  const socket = io(url);
 
   return socket;
 };

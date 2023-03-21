@@ -5,7 +5,7 @@ import { exportText } from './utils/helper';
 
 const url = 'https://socket-io-pi5g.onrender.com/';
 
-const socket = io('localhost:3001');
+const socket = io(url);
 
 function App() {
   const [message, setMessage] = useLocalStorage('message', '');
